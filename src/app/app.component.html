@@ -1,0 +1,32 @@
+<mat-card>
+	<mat-card-content>
+		<form [formGroup]='grupoForm' (ngSubmit)="onSave()" >
+			<p>NEW TASACION</p>
+			<div class="input-row" fxLayout="row wrap" fxLayoutGap="25px">
+
+				<mat-form-field appearance="standard" fxFlex="calc(25% - 25px)" fxFlex.xs="">
+					<mat-label>Valor AA</mat-label>
+					<input matInput type="text" formControlName="a" >
+          	<mat-error *ngIf="submitted">
+							<mat-error *ngIf="grupoForm.get('a').hasError('required')">Ingrese un valor A
+							</mat-error>
+						</mat-error>
+				</mat-form-field>
+
+				<mat-form-field appearance="standard" fxFlex="calc(25% - 25px)" fxFlex.xs="">
+					<mat-label>Valor BB</mat-label>
+					<input matInput type="text" formControlName="b">
+          	<mat-error *ngIf="submitted">
+							<mat-error *ngIf="grupoForm.get('a').hasError('required')">Ingrese un valor B
+							</mat-error>
+						</mat-error>
+        </mat-form-field>
+      
+			</div>
+
+			<div class="button-row" fxLayout="row wrap" fxLayoutGap="25px" fxLayout.xs="column">
+				<button mat-flat-button color="primary">Grabar</button>
+			</div>
+		</form>
+	</mat-card-content>
+</mat-card>
